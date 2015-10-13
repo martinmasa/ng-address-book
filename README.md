@@ -13,7 +13,6 @@ AngularJS address book sample application
 + Create directive for `contact`
 + Use ui-router
 + Add to unit tests & create E2E tests
-+ 
 
 
 
