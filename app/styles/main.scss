@@ -1,0 +1,98 @@
+// TODO: add responsive styles
+
+$icon-font-path: '../fonts/';
+
+// bower:scss
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+// variables
+$font-family: 'Varela Round', sans-serif;
+$primary-blue: #0096db;
+
+
+body {
+  background: lighten($gray-base, 85%);
+  color: $primary-blue;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, div, button  {
+  font-family: $font-family;
+}
+
+.btn-primary {
+  background-color: $primary-blue;
+
+  &.focus, &:focus {
+    background-color: #006695;
+  }
+}
+
+
+/* Contact List */
+
+#filters {
+  margin: 1rem 0;
+}
+
+.contact-container {
+  padding-left: 0;
+
+  .contact.well {
+    background: #ebebeb;
+    cursor: pointer;
+    min-height: 11rem;
+
+    .contact-avatar {
+      font-size: 5.74rem;
+      float: left;
+      padding: 0.4rem;
+      color: #f7f7f7;
+      background: #e1e1e1;
+      margin-right: 1rem;
+      border: 0.1rem solid #d6d6d6;
+    }
+
+    .contact-details {
+      line-height: 1.6rem;
+      color: $gray;
+      font-size: 1.3rem;
+
+      .contact-name {
+        margin-bottom: 0;
+        font-size: 1.5rem;
+      }
+
+      .contact-actions {
+        float: right;
+
+        .btn {
+          margin-bottom: 0.5rem;
+          display: block;
+          width: 7rem;
+        }
+      }
+    }
+
+    &.contact-selected {
+      background: #179fdd;
+
+      .contact-details {
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+/* Contact Form */
+
+#contact-form {
+  label {
+    text-align: left;
+    color: $gray;
+  }
+
+  .has-error, .error-message {
+    color: #8b0000;
+  }
+}

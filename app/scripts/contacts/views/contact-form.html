@@ -1,0 +1,81 @@
+<div id="contact-form-container" class="container">
+
+  <p class="lead">{{contacteditvm.editContact.id > 0 ? 'Edit address' : 'Add new address'}}</p>
+
+  <form id="contact-form" data-ng-submit="contacteditvm.saveContact(contacteditvm.editContact)" name="contactForm" class="form-horizontal well col-md-6" novalidate>
+    <div class="form-group" data-ng-class="{ 'has-error' : contactForm.firstName.$invalid && !contactForm.firstName.$pristine }">
+      <label for="firstName" class="col-md-3 control-label">First Name *</label>
+      <div class="col-md-6">
+        <input type="text" data-ng-model="contacteditvm.editContact.firstName" class="form-control" id="firstName" name="firstName" required>
+        <span data-ng-show="contactForm.firstName.$invalid && !contactForm.firstName.$pristine" class="error-message">
+          Please enter the first name
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group" data-ng-class="{ 'has-error' : contactForm.lastName.$invalid && !contactForm.lastName.$pristine }">
+      <label for="lastName" class="col-md-3 control-label">Last Name * </label>
+      <div class="col-md-6">
+        <input type="text" data-ng-model="contacteditvm.editContact.lastName" class="form-control" id="lastName" name="lastName" required>
+        <span data-ng-show="contactForm.lastName.$invalid && !contactForm.lastName.$pristine" class="error-message">
+          Please enter the last name
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="address1" class="col-md-3 control-label">Address</label>
+      <div class="col-md-6">
+        <input type="text" data-ng-model="contacteditvm.editContact.address1" class="form-control" id="address1">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="address2" class="col-md-3 control-label">&nbsp;</label>
+      <div class="col-md-6">
+        <input type="text" data-ng-model="contacteditvm.editContact.address2" class="form-control" id="address2">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="town" class="col-md-3 control-label">Town</label>
+      <div class="col-md-6">
+        <input type="text" data-ng-model="contacteditvm.editContact.town" class="form-control" id="town">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="county" class="col-md-3 control-label">County</label>
+      <div class="col-md-6">
+        <input type="text" data-ng-model="contacteditvm.editContact.county" class="form-control" id="county">
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="country" class="col-md-3 control-label">Country</label>
+      <div class="col-md-6">
+        <input type="text" data-ng-model="contacteditvm.editContact.country" class="form-control" id="country">
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="postcode" class="col-md-3 control-label">Postcode</label>
+      <div class="col-md-6">
+        <input type="text" data-ng-model="contacteditvm.editContact.postcode" class="form-control" id="postcode">
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-9">
+          <a data-ng-href="#/contacts" class="btn btn-default">Cancel</a>
+          <button type="submit" class="btn btn-primary" data-ng-disabled="contactForm.$invalid">{{contacteditvm.editContact.id > 0 ? 'Save' : 'Update'}}</button>
+        </div>
+      </div>
+    </div>
+
+  </form>
+</div>

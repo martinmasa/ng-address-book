@@ -1,0 +1,54 @@
+<!doctype html>
+<html data-ng-app="app" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="AngularJS sample address book application">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ng address book</title>
+
+
+    <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <header class="container">
+      <h3>Address Book</h3>
+    </header>
+
+    <div id="app-container" data-ng-view=""></div>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+    <script src="../bower_components/ngstorage/ngStorage.js"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/contacts/contacts.module.js"></script>
+
+    <script src="scripts/contacts/contact.service.js"></script>
+    <script src="scripts/contacts/contacts.controller.js"></script>
+    <script src="scripts/contacts/contact-edit.controller.js"></script>
+    <script src="scripts/filters/starts-with-letter.filter.js"></script>
+    <script src="scripts/filters/format-address.filter.js"></script>
+    <script src="scripts/contacts/contact.directive.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>

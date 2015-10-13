@@ -1,0 +1,43 @@
+<div id="contact-list" class="container">
+
+  <p class="lead">Select addresses</p>
+
+  <a id="add-contact" data-ng-href="#/contacts/-1" role="button" class="btn btn-lg btn-primary">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new address
+  </a>
+
+  <section id="filters">
+    <button type="button" class="btn btn-xs btn-default" data-ng-click="contactsvm.setFilterLetters('')" data-ng-class="{'btn-primary': !filterLetters}">All</button>
+    <button type="button" class="btn btn-xs btn-default" data-ng-click="contactsvm.setFilterLetters('ABCDE')" data-ng-class="{'btn-primary': filterLetters == 'ABCDE'}">A-E</button>
+    <button type="button" class="btn btn-xs btn-default" data-ng-click="contactsvm.setFilterLetters('FGHIJK')" data-ng-class="{'btn-primary': filterLetters == 'FGHIJK'}">F-K</button>
+    <button type="button" class="btn btn-xs btn-default" data-ng-click="contactsvm.setFilterLetters('LMNOP')" data-ng-class="{'btn-primary': filterLetters == 'LMNOP'}">L-P</button>
+    <button type="button" class="btn btn-xs btn-default" data-ng-click="contactsvm.setFilterLetters('QRSTUV')" data-ng-class="{'btn-primary': filterLetters == 'QRSTUV'}">Q-V</button>
+    <button type="button" class="btn btn-xs btn-default" data-ng-click="contactsvm.setFilterLetters('WXYZ')" data-ng-class="{'btn-primary': filterLetters == 'WXYZ'}">W-Z</button>
+  </section>
+
+  <div class="contact-container col-md-5" data-ng-repeat="contact in filteredContacts = (contactsvm.contacts | startsWithLetter:filterLetters | orderBy:'firstName')">
+    <article class="contact well clearfix" data-ng-click="contactsvm.toggleSelection(contact)" data-ng-class="selectedContacts.indexOf(contact.id) > -1 ? 'contact-selected' : ''">
+      <span class="contact-avatar glyphicon glyphicon-user" aria-hidden="true"></span>
+      <section class="contact-details">
+        <section class="contact-actions">
+          <a data-ng-href="#/contacts/{{contact.id}}" class="btn btn-xs btn-default btn-contact-edit" role="button">
+            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit
+          </a>
+          <button type="button" class="btn btn-xs btn-danger btn-contact-delete" data-ng-click="contactsvm.deleteContact(contact)">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete
+          </button>
+        </section>
+
+        <span class="contact-name lead">{{ contact.firstName }} {{ contact.lastName}}</span> <br/>
+        <span class="contact-address">{{ contact | formatAddress}}</span>
+
+      </section>
+    </article>
+  </div>
+
+
+  <p data-ng-show="filteredContacts.length == 0">
+    No addresses found
+  </p>
+
+</div>
